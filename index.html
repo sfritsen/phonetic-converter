@@ -19,7 +19,8 @@
         document.getElementById("inputText").addEventListener('keyup', (e) => {
             let output = document.getElementById("output");
             output.innerHTML = '';
-            const inputText = document.getElementById('inputText').value.toLowerCase();
+            let inputText = document.getElementById('inputText').value.toLowerCase();
+            inputText = inputText.replace(/\s/g, "");
             const chars = inputText.split('');
             
             let word = '';
