@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <h1>Phonetic Converter</h1>
-        <input type="text" id="inputText" placeholder="Type a word" value="" />
+        <input type="text" id="inputText" placeholder="Type a word" value="" onkeydown="return /[a-zA-Z]/i.test(event.key)" />
         <a href="javascript:;" id="resetInput" onclick="reset()">Reset</a>
         <div class="output" id="output"></div>
     </div>
