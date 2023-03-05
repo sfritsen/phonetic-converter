@@ -43,8 +43,6 @@ h1 span, .output span {
 h1 {
     font-size: 2em;
     color: var(--font-color);
-    /* line-height: 1;
-    margin: none; */
 }
 h1 span::first-letter, .output span::first-letter {
     color: var(--accent-color);
@@ -73,9 +71,13 @@ input {
     font-size: 1.5em;
     color: var(--font-color);
     padding: 20px;
-    border: 2px solid var(--input-border-color);
+    border: 4px solid var(--input-border-color);
     border-radius: 12px;
     text-align: center;
+    outline: none;
+}
+input:focus {
+    border: 4px solid var(--accent-color);
 }
 
 .output {
@@ -88,6 +90,9 @@ input {
     margin-bottom: 15px;
 }
 
+.yayGood {
+    margin-right: 5px;
+}
 .error {
     color: orangered;
 }

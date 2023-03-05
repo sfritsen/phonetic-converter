@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1><span>Phonetic</span> <span>Converter</span></h1>
-    <input type="text" id="inputText" placeholder="Type a word" value="">
+    <input type="text" id="inputText" placeholder="Type a word" value="" autofocus>
     <a href="javascript:;" id="resetInput" onclick="reset()">Reset</a>
     <div class="output" id="output"></div>
     <a href="https://github.com/sfritsen/phonetic-converter">Visit on Github</a>
@@ -59,7 +59,7 @@
                     chars.forEach((value) => {
                         word = obj[value];
                         output.innerHTML += `
-                            <div><span>${word}</span></div>
+                            <span class="yayGood">${word}</span>
                         `;
                     })
                 break;
