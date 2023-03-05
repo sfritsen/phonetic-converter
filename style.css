@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
 
 :root {
     font-size: 24px;
+    --font: 'Neucha', cursive;
     --bg-color: black;
     --font-color: #f4f4f4;
     --input-border-color: white;
@@ -13,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Chewy', cursive;
+    font-family: var(--font);
     background: var(--bg-color);
     color: var(--font-color);
 }
@@ -42,10 +43,18 @@ body {
         max-width: 350px;
     }
 }
-
+h1 span, .output span {
+    display: inline-block;
+}
 h1 {
     font-size: 2em;
+    color: var(--font-color);
+    line-height: 1;
+    margin: none;
+}
+h1 span::first-letter, .output span::first-letter {
     color: var(--accent-color);
+    font-weight: bold;
 }
 
 a:link, 
@@ -59,6 +68,9 @@ a:focus {
     padding: 8px;
     font-size: 1.2em;
 }
+a:hover {
+    color: var(--font-color);
+}
 
 input {
     display: block;
@@ -66,7 +78,7 @@ input {
     font-family: inherit;
     font-size: 1.5em;
     color: var(--font-color);
-    padding: 24px;
+    padding: 20px;
     border: 2px solid var(--input-border-color);
     border-radius: 12px;
     text-align: center;
@@ -75,7 +87,7 @@ input {
 .output {
     font-family: inherit;
     margin-top: 25px;
-    font-size: 2em;
+    font-size: 1.4em;
     line-height: 1;
     text-align: center;
     text-transform: capitalize;

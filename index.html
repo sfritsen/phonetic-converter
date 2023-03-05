@@ -9,10 +9,11 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>Phonetic Converter</h1>
-        <input type="text" id="inputText" placeholder="Type a word" value="" onkeydown="return /[a-zA-Z]/i.test(event.key)" />
+        <h1><span>Phonetic</span> <span>Converter</span></h1>
+        <input type="text" id="inputText" placeholder="Type a word" value="">
         <a href="javascript:;" id="resetInput" onclick="reset()">Reset</a>
         <div class="output" id="output"></div>
+        <p><a href="https://github.com/sfritsen/phonetic-converter">Visit on Github</a></p>
     </div>
 
     <script type="text/javascript">
@@ -20,47 +21,67 @@
             let output = document.getElementById("output");
             output.innerHTML = '';
             let inputText = document.getElementById('inputText').value.toLowerCase();
-            inputText = inputText.replace(/\s/g, "");
-            const chars = inputText.split('');
-            
-            let word = '';
+            const validInput = allLetter(inputText);
 
-            const obj = {
-                'a': 'alpha',
-                'b': 'bravo',
-                'c': 'charlie',
-                'd': 'delta',
-                'e': 'echo',
-                'f': 'foxtrot',
-                'g': 'golf',
-                'h': 'hotel',
-                'i': 'india',
-                'j': 'juliett',
-                'k': 'kilo',
-                'l': 'lima',
-                'm': 'mike',
-                'n': 'november',
-                'o': 'oscar',
-                'p': 'papa',
-                'q': 'quebec',
-                'r': 'romeo',
-                's': 'sierra',
-                't': 'tango',
-                'u': 'uniform',
-                'v': 'victor',
-                'w': 'whiskey',
-                'x': 'xray',
-                'y': 'yankee',
-                'z': 'zulu',
+            switch (validInput) {
+                case true:
+                    inputText = inputText.replace(/\s/g, "");
+                    const chars = inputText.split('');
+                    let word = '';
+
+                    const obj = {
+                        'a': 'alpha',
+                        'b': 'bravo',
+                        'c': 'charlie',
+                        'd': 'delta',
+                        'e': 'echo',
+                        'f': 'foxtrot',
+                        'g': 'golf',
+                        'h': 'hotel',
+                        'i': 'india',
+                        'j': 'juliet',
+                        'k': 'kilo',
+                        'l': 'lima',
+                        'm': 'mike',
+                        'n': 'november',
+                        'o': 'oscar',
+                        'p': 'papa',
+                        'q': 'quebec',
+                        'r': 'romeo',
+                        's': 'sierra',
+                        't': 'tango',
+                        'u': 'uniform',
+                        'v': 'victor',
+                        'w': 'whiskey',
+                        'x': 'x-ray',
+                        'y': 'yankee',
+                        'z': 'zulu',
+                    }
+            
+                    chars.forEach((value) => {
+                        word = obj[value];
+                        output.innerHTML += `
+                            <div><span>${word}</span></div>
+                        `;
+                    })
+                    break;
+                case false:
+                    output.innerHTML += `
+                        <div>Really?, try again please.</div>
+                    `;
+                    break;
             }
-    
-            chars.forEach((value) => {
-                word = obj[value];
-                output.innerHTML += `
-                    <div>${word}</div>
-                `;
-            })
+
         });
+
+        function allLetter(inputtxt) { 
+            const onlyLettersAndSpaces = /^[A-Za-z\s]+$/;
+            if (inputtxt.match(onlyLettersAndSpaces)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         function reset() {
             document.getElementById('inputText').value = '';
