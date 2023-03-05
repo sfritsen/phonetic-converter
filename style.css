@@ -26,9 +26,6 @@ body {
     input {
         width: 300px;
     }
-    h1 {
-        text-align: center;
-    }
 }
 @media (min-width: 500px) {
     body {
@@ -47,6 +44,7 @@ h1 {
     font-size: 2.2em;
     text-transform: uppercase;
     color: var(--font-color);
+    text-align: center;
 }
 
 h1 span::first-letter, .output span::first-letter {
