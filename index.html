@@ -8,13 +8,11 @@
     <title>Phonetic Converter</title>
 </head>
 <body>
-    <div class="wrapper">
-        <h1><span>Phonetic</span> <span>Converter</span></h1>
-        <input type="text" id="inputText" placeholder="Type a word" value="">
-        <a href="javascript:;" id="resetInput" onclick="reset()">Reset</a>
-        <div class="output" id="output"></div>
-        <p><a href="https://github.com/sfritsen/phonetic-converter">Visit on Github</a></p>
-    </div>
+    <h1><span>Phonetic</span> <span>Converter</span></h1>
+    <input type="text" id="inputText" placeholder="Type a word" value="">
+    <a href="javascript:;" id="resetInput" onclick="reset()">Reset</a>
+    <div class="output" id="output"></div>
+    <a href="https://github.com/sfritsen/phonetic-converter">Visit on Github</a>
 
     <script type="text/javascript">
         document.getElementById("inputText").addEventListener('keyup', (e) => {
@@ -53,7 +51,7 @@
                         'u': 'uniform',
                         'v': 'victor',
                         'w': 'whiskey',
-                        'x': 'x-ray',
+                        'x': 'xray',
                         'y': 'yankee',
                         'z': 'zulu',
                     }
@@ -70,7 +68,7 @@
                         output.innerHTML += '';
                     } else {
                         output.innerHTML += `
-                            <div>Really?, try again please.</div>
+                            <div class="error">"${inputText}"</div>Really?, try again please.</div>
                         `;
                     }
                 break;

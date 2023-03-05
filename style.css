@@ -14,17 +14,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-family: var(--font);
     background: var(--bg-color);
     color: var(--font-color);
 }
 
-.wrapper {
-    text-align: center;
-}
-
 @media (min-width: 400px) {
-    .wrapper {
+    body {
         max-width: 400px;
         font-size: 18px;
     }
@@ -33,7 +30,7 @@ body {
     }
 }
 @media (min-width: 500px) {
-    .wrapper {
+    body {
         font-size: 24px;
     }
     input {
@@ -46,8 +43,8 @@ h1 span, .output span {
 h1 {
     font-size: 2em;
     color: var(--font-color);
-    line-height: 1;
-    margin: none;
+    /* line-height: 1;
+    margin: none; */
 }
 h1 span::first-letter, .output span::first-letter {
     color: var(--accent-color);
@@ -88,4 +85,9 @@ input {
     line-height: 1;
     text-align: center;
     text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: orangered;
 }
