@@ -64,12 +64,16 @@
                             <div><span>${word}</span></div>
                         `;
                     })
-                    break;
+                break;
                 case false:
-                    output.innerHTML += `
-                        <div>Really?, try again please.</div>
-                    `;
-                    break;
+                    if (inputText.length == 0){
+                        output.innerHTML += '';
+                    } else {
+                        output.innerHTML += `
+                            <div>Really?, try again please.</div>
+                        `;
+                    }
+                break;
             }
 
         });
