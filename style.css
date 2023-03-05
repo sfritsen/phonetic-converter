@@ -17,7 +17,6 @@ body {
     font-family: var(--font);
     background: var(--bg-color);
     color: var(--font-color);
-    white-space: nowrap;
 }
 
 @media (min-width: 400px) {
@@ -31,6 +30,7 @@ body {
 }
 @media (min-width: 500px) {
     body {
+        max-width: 900px;
         font-size: 28px;
     }
     input {
@@ -75,7 +75,7 @@ input {
     color: var(--font-color);
     padding: 20px;
     border: 4px solid var(--input-border-color);
-    border-radius: 16px;
+    border-radius: 50px;
     text-align: center;
     outline: none;
 }
